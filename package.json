@@ -1,0 +1,12 @@
+{
+  "name": "lifi-sdk-node-sample",
+  "version": "0.0.1",
+  "description": "Sample project to showcase the usage of @lifinance/sdk",
+  "main": "index.js",
+  "author": "Max Klenk <max@li.finance>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@lifinance/sdk": "^0.0.2"
+  }
+}
