@@ -9,11 +9,13 @@ async function demo() {
     console.warn('Please specify a MNEMONIC phrase in your environment variables: `export MNEMONIC="..."`')
     return
   }
+  console.log('>> Setup Wallet')
   const provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/', 137)
   const wallet = ethers.Wallet.fromMnemonic(process.env.MNEMONIC).connect(provider)
 
 
   // get Route
+  console.log('>> Request route')
   const routeRequest = {
     fromChainId: 137, // Polygon
     fromAmount: '1000000', // 1 USDT
@@ -25,19 +27,24 @@ async function demo() {
 
   const routeResponse = await Lifi.getRoutes(routeRequest)
   const route = routeResponse.routes[0]
-  console.log({ route })
+  console.log('>> Got Route')
+  console.log(route)
 
 
   // execute Route
-  await Lifi.executeRoute(wallet, route, (updatedRoute) => {
-    let lastExecution
-    for (const step of updatedRoute.steps) {
-      if (step.execution) {
-        lastExecution = step.execution
+  console.log('>> Start Execution')
+  const settings = {
+    updateCallback: (updatedRoute) => {
+      let lastExecution
+      for (const step of updatedRoute.steps) {
+        if (step.execution) {
+          lastExecution = step.execution
+        }
       }
+      console.log(lastExecution)
     }
-    console.log(lastExecution)
-  })
+  }
+  await Lifi.executeRoute(wallet, route, settings)
 
   console.log('DONE')
 }

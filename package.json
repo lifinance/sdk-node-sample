@@ -7,6 +7,6 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@lifinance/sdk": "^0.0.2"
+    "@lifinance/sdk": "0.1.1"
   }
 }

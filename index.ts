@@ -1,4 +1,4 @@
-import Lifi, { ChainId, ChainKey, CoinKey, Execution, findDefaultCoinOnChain } from '@lifinance/sdk'
+import Lifi, { ChainId, CoinKey, Execution, ExecutionSettings, findDefaultToken } from '@lifinance/sdk'
 import { providers, Wallet } from 'ethers'
 
 async function demo() {
@@ -7,40 +7,46 @@ async function demo() {
     console.warn('Please specify a MNEMONIC phrase in your environment variables: `export MNEMONIC="..."`')
     return
   }
+  console.log('>> Setup Wallet')
   const provider = new providers.JsonRpcProvider('https://polygon-rpc.com/', 137)
   const wallet = Wallet.fromMnemonic(process.env.MNEMONIC).connect(provider)
 
 
   // get Route
+  console.log('>> Request route')
   const routeRequest = {
     fromChainId: ChainId.POL, // Polygon
     fromAmount: '1000000', // 1 USDT
-    fromTokenAddress: findDefaultCoinOnChain(CoinKey.USDT, ChainKey.POL).id,
+    fromTokenAddress: findDefaultToken(CoinKey.USDT, ChainId.POL).address,
     toChainId: ChainId.DAI, // xDai
-    toTokenAddress: findDefaultCoinOnChain(CoinKey.USDT, ChainKey.DAI).id,
+    toTokenAddress: findDefaultToken(CoinKey.USDT, ChainId.DAI).address,
     options: { 
       slippage: 0.03, // = 3%
       allowSwitchChain: false, // execute all transaction on starting chain
     },
   }
-
   const routeResponse = await Lifi.getRoutes(routeRequest)
   const route = routeResponse.routes[0]
-  console.log({ route })
+  console.log('>> Got Route')
+  console.log(route)
 
 
   // execute Route
-  await Lifi.executeRoute(wallet, route, (updatedRoute) => {
-    let lastExecution: Execution|undefined = undefined
-    for (const step of updatedRoute.steps) {
-      if (step.execution) {
-        lastExecution = step.execution
+  console.log('>> Start Execution')
+  const settings: ExecutionSettings = {
+    updateCallback: (updatedRoute) => {
+      let lastExecution: Execution | undefined = undefined
+      for (const step of updatedRoute.steps) {
+        if (step.execution) {
+          lastExecution = step.execution
+        }
       }
+      console.log(lastExecution)
     }
-    console.log(lastExecution)
-  })
+  }
+  await Lifi.executeRoute(wallet, route, settings)
 
-  console.log('DONE')
+  console.log('>> Done')
 }
 
 demo()
