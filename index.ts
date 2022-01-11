@@ -35,6 +35,9 @@ async function demo() {
     options: {
       slippage: 0.03, // = 3%
       allowSwitchChain: false, // execute all transaction on starting chain
+      exchanges: {
+        allow: [], // only find direct transfers
+      },
     },
   };
   const routeResponse = await Lifi.getRoutes(routeRequest);

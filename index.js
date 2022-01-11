@@ -28,7 +28,13 @@ async function demo() {
     fromTokenAddress: "0xc2132d05d31c914a87c6611c10748aeb04b58e8f", // USDT
     toChainId: 100, // xDai
     toTokenAddress: "0x4ecaba5870353805a9f068101a40e0f32ed605c6", // USDT
-    options: { slippage: 0.03 },
+    options: {
+      slippage: 0.03, // = 3%
+      allowSwitchChain: false, // execute all transaction on starting chain
+      exchanges: {
+        allow: [], // only find direct transfers
+      },
+    },
   };
 
   const routeResponse = await Lifi.getRoutes(routeRequest);
