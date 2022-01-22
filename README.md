@@ -1,6 +1,6 @@
 # LiFi SDK - Node Demo
 
-The demo executes a simple cross chain transfer of 1 USDT from Polygon to xDai using the best bridge it can find.
+The demo of [our SDK](https://github.com/lifinance/sdk) executes a simple cross chain transfer of 1 USDT from Polygon to xDai using the best bridge it can find.
 
 It needs access to an actual wallet and makes real transactions on chain.
 
