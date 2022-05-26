@@ -1,7 +1,7 @@
 import sdk from "@lifinance/sdk";
 import ethers from "ethers";
 
-const Lifi = sdk.default;
+const Lifi = new sdk.default();
 
 async function demo() {
   // setup wallet
