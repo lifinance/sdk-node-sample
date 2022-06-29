@@ -1,9 +1,12 @@
+import { Signer } from 'ethers';
 import Lifi, {
   ChainId,
   CoinKey,
+  ConfigUpdate,
   Execution,
   ExecutionSettings,
   findDefaultToken,
+  Route,
 } from "@lifinance/sdk";
 import { providers, Wallet } from "ethers";
 
@@ -40,13 +43,43 @@ async function demo() {
       },
     },
   };
-  const routeResponse = await Lifi.getRoutes(routeRequest);
+  
+  // STEP 1: Initialize the API
+
+  // ☝️ This configuration is totally optional! ------------------------------------
+  const optionalConfigs: ConfigUpdate = {
+    apiUrl: 'https://li.quest', // DEFAULT production endpoint
+    rpcs: { // You can provide custom RPCs
+      137: ['https://polygon-rpc.com/'] 
+    },
+    multicallAddresses: { // You can provide custom addresses for multicall
+      137: '0x02817C1e3543c2d908a590F5dB6bc97f933dB4BD'
+    },
+    defaultExecutionSettings: { // You can provide default execution settings @see {ExecutionSettings}
+      updateCallback: (route: Route):void => {
+        console.log('>> Route updated', route);
+      },
+      switchChainHook: (requiredChainId: number):Promise<Signer | undefined> => {
+        console.log('>> Switching to chain', requiredChainId);
+        return Promise.resolve(wallet);
+      },
+      infiniteApproval: false, // DEFAULT false
+    } 
+  }
+  // ---------------------------------------------------------------------------
+
+  const api = new Lifi(optionalConfigs);
+
+  // STEP 2: Request a route
+  const routeResponse = await api.getRoutes(routeRequest);
   const route = routeResponse.routes[0];
   console.log(">> Got Route");
   console.log(route);
 
-  // execute Route
+  // STEP 3: Execute the route
   console.log(">> Start Execution");
+
+  // These are optonal settings for execution ------------------------------------
   const settings: ExecutionSettings = {
     updateCallback: (updatedRoute) => {
       let lastExecution: Execution | undefined = undefined;
@@ -67,7 +100,9 @@ async function demo() {
       return wallet;
     },
   };
-  await Lifi.executeRoute(wallet, route, settings);
+  // ---------------------------------------------------------------------------
+
+  await api.executeRoute(wallet, route, settings);
 
   console.log(">> Done");
 }
