@@ -1,4 +1,4 @@
-import LifiSDK from "@lifinance/sdk";
+import LifiSDK from "@lifi/sdk";
 import ethers from "ethers";
 
 const Lifi = new LifiSDK.default()

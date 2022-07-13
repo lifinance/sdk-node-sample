@@ -1,4 +1,3 @@
-import { Signer } from 'ethers';
 import Lifi, {
   ChainId,
   CoinKey,
@@ -6,9 +5,9 @@ import Lifi, {
   Execution,
   ExecutionSettings,
   findDefaultToken,
-  Route,
-} from "@lifinance/sdk";
-import { providers, Wallet } from "ethers";
+  Route
+} from "@lifi/sdk";
+import { providers, Signer, Wallet } from 'ethers';
 
 const mnemonic = process.env.MNEMONIC || "";
 
