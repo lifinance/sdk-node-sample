@@ -369,22 +369,22 @@
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
 "@lifi/sdk@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@lifi/sdk/-/sdk-1.0.0.tgz#7e06d272bf73282f7d9539eea7026c89b7c25b5f"
-  integrity sha512-xblIaRjcqsha1IvF06+D06h8VKAuPY3zVyR6PLaBq0/Gci9sKfolMeoS4q1RvoftrGPRo4tmEBVAyhjIkwA0SQ==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lifi/sdk/-/sdk-1.0.2.tgz#c03e8d011dc153c12f970ae666c0696d6bc3fee0"
+  integrity sha512-EFl/qNnS9ZrrYLbQpsg9djaHpr6mobcyd4k6IjvqpeMU/Rn+sYgNA7OywRNFdYQ6aGnh+V4XyBpxEbmJkyLmRg==
   dependencies:
     "@ethersproject/abi" "^5.6.4"
     "@ethersproject/contracts" "^5.6.2"
-    "@lifi/types" "^1.0.0"
+    "@lifi/types" "^1.1.0"
     axios "^0.27.2"
     bignumber.js "^9.0.1"
     eth-rpc-errors "^4.0.3"
     ethers "^5.6.9"
 
-"@lifi/types@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@lifi/types/-/types-1.0.0.tgz#600392079439be7b5d3fb2d84bcce0b4b5f42054"
-  integrity sha512-Sxsar8aw0wsxCTynR/BF/NK9P8Yo/iqHEXoV4LUpFd5ZdK1HREKS1J2aIizqD9U8350lBeESuPBxPKYKRtVvHw==
+"@lifi/types@^1.1.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@lifi/types/-/types-1.3.0.tgz#5c3056833a751c399a948a105829337486008e75"
+  integrity sha512-A70DVVvoEfBiOhwwJz715/bwhRuzhG6qLBPzXF7djyWpKCkujVonewN/9zFIJdByIwMpMnXA32QdA5/gwNofwg==
   dependencies:
     ethers "^5.6.9"
 
@@ -409,9 +409,9 @@
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
 "@types/node@^18.0.3":
-  version "18.0.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.0.3.tgz#463fc47f13ec0688a33aec75d078a0541a447199"
-  integrity sha512-HzNRZtp4eepNitP+BD6k2L6DROIDG4Q0fm4x+dwfsr6LGmROENnok75VGw40628xf+iR24WeMFcHuuBDUAzzsQ==
+  version "18.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.2.tgz#ffc5f0f099d27887c8d9067b54e55090fcd54126"
+  integrity sha512-KcfkBq9H4PI6Vpu5B/KoPeuVDAbmi+2mDBqGPGUgoL7yXQtcWGu2vJWmmRkneWK3Rh0nIAX192Aa87AqKHYChQ==
 
 acorn-walk@^8.1.1:
   version "8.2.0"
@@ -419,9 +419,9 @@ acorn-walk@^8.1.1:
   integrity sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==
 
 acorn@^8.4.1:
-  version "8.7.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
-  integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
+  integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
 aes-js@3.0.0:
   version "3.0.0"
@@ -628,9 +628,9 @@ scrypt-js@3.0.1:
   integrity sha512-cdwTTnqPu0Hyvf5in5asVdZocVDTNRmR7XEcJuIzMjJeSHybHl7vpB66AzwTaIg6CLSbtjcxc8fqcySfnTkccA==
 
 ts-node@^10.8.2:
-  version "10.8.2"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.8.2.tgz#3185b75228cef116bf82ffe8762594f54b2a23f2"
-  integrity sha512-LYdGnoGddf1D6v8REPtIH+5iq/gTDuZqv2/UJUU7tKjuEU8xVZorBM+buCGNjj+pGEud+sOoM4CX3/YzINpENA==
+  version "10.9.1"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
+  integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
   dependencies:
     "@cspotcode/source-map-support" "^0.8.0"
     "@tsconfig/node10" "^1.0.7"
