@@ -7,11 +7,11 @@
   "author": "Max Klenk <max@li.finance>",
   "license": "MIT",
   "dependencies": {
-    "@lifi/sdk": "^1.2.2"
+    "@lifi/sdk": "^1.5.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.9",
+    "@types/node": "^18.7.15",
     "ts-node": "^10.8.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   }
 }

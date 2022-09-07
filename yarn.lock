@@ -710,23 +710,23 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@lifi/sdk@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@lifi/sdk/-/sdk-1.2.2.tgz#39730896a60a09497330873273b99e875545b8e6"
-  integrity sha512-K/Nz8lye5cz32hFGUw+P/vOTfN/WnH0FTZAQjKwiWtX6/cWLi2NqUyg07T9YxTN4sbafLcI3D5Ual+laq/Rq8A==
+"@lifi/sdk@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@lifi/sdk/-/sdk-1.5.0.tgz#3a2ae17e7911cd44254ff32111ffa95050cf4f1b"
+  integrity sha512-ENKHU6SdcNQOiCaYRlKCm/4RxwEeLXe3bH1ovTLFZGKPsvTyizJ+tpxsdXHSFEA7Nd+0ABUgouqPTiIvqbltkA==
   dependencies:
     "@ethersproject/abi" "^5.7.0"
     "@ethersproject/contracts" "^5.7.0"
-    "@lifi/types" "^1.5.1"
+    "@lifi/types" "^1.6.0"
     axios "^0.27.2"
     bignumber.js "^9.1.0"
     eth-rpc-errors "^4.0.3"
     ethers "^5.7.0"
 
-"@lifi/types@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@lifi/types/-/types-1.5.1.tgz#675656b01972da8c68cb514b80f17192089223a3"
-  integrity sha512-hM8SH/rupv8ouVeU4S6teSiS33F29Q8Ly75MkMtSsS13X01EZ+YY7mFmgB3uFjTYDrzxnISb+TMmq/CD8b5HBA==
+"@lifi/types@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@lifi/types/-/types-1.6.0.tgz#ab8203bbfd063e406170e21b710cf4c9e6b03582"
+  integrity sha512-8oFhHmI+2z2b2nyKfSBWEsrtX1LIcWvjI88OC06maq7G6i8tbzMfD5N1lHW2JwTjamfavvALwEYpJVttZu1r2w==
   dependencies:
     ethers "^5.6.9"
 
@@ -750,10 +750,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@types/node@^18.7.9":
-  version "18.7.9"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.9.tgz#180bfc495c91dc62573967edf047e15dbdce1491"
-  integrity sha512-0N5Y1XAdcl865nDdjbO0m3T6FdmQ4ijE89/urOHLREyTXbpMWbSafx9y7XIsgWGtwUP2iYTinLyyW3FatAxBLQ==
+"@types/node@^18.7.15":
+  version "18.7.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.15.tgz#20ae1ec80c57ee844b469f968a1cd511d4088b29"
+  integrity sha512-XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==
 
 acorn-walk@^8.1.1:
   version "8.2.0"
@@ -1024,10 +1024,10 @@ ts-node@^10.8.2:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-typescript@^4.7.4:
-  version "4.7.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
-  integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
+typescript@^4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.2.tgz#e3b33d5ccfb5914e4eeab6699cf208adee3fd790"
+  integrity sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
