@@ -56,7 +56,7 @@ async function demo() {
     },
     switchChainHook: async (requiredChainId) => {
       console.log(">>Switching Chains");
-      const provider = new providers.JsonRpcProvider(
+      const provider = new ethers.providers.JsonRpcProvider(
         "https://rpc.xdaichain.com/",
         requiredChainId
       );
