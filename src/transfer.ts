@@ -5,7 +5,7 @@ import Lifi, {
   findDefaultToken,
   Route
 } from '@lifi/sdk';
-import { providers, Signer, Wallet } from 'ethers';
+import { providers, Wallet } from 'ethers';
 import { promptConfirm } from './helpers/helpers'
 
 const mnemonic = process.env.MNEMONIC || '';
