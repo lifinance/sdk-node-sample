@@ -46,3 +46,4 @@ ts-node src/[SCRIPT].ts
 Available `[SCRIPT]`:
 
 - `polynomialDeposit`
+- `klimaRetireExactCarbon`
