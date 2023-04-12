@@ -11,18 +11,21 @@ export const getLifi = (config?: ConfigUpdate) => {
 }
 
 export const getSigner = async (chainId: number) => {
-  if (!process.env.MNEMONIC) {
+  const privateKey = process.env.PRIVATE_KEY
+  const mnemonic = process.env.MNEMONIC
+  
+  if (!privateKey && !mnemonic) {
     throw new Error(
-      'Please specify a MNEMONIC phrase in your environment variables: `export MNEMONIC="..."`'
+      'Please specify a MNEMONIC or PRIVATE_KEY in your environment variables: `export MNEMONIC="..."`'
     )
   }
 
   const provider = await getLifi().getRpcProvider(chainId)
-  const wallet = ethers.Wallet.fromMnemonic(process.env.MNEMONIC).connect(provider)
-  return wallet
+  const wallet = mnemonic ? ethers.Wallet.fromMnemonic(mnemonic) : new ethers.Wallet(privateKey!)
+  return wallet.connect(provider)
 }
 
-const executeTransaction = async (wallet: ethers.Signer, transaction: ethers.providers.TransactionRequest) => {
+export const executeTransaction = async (wallet: ethers.Signer, transaction: ethers.providers.TransactionRequest) => {
   console.log(transaction)
   const tx = await wallet.sendTransaction(transaction)
   console.log(tx)
