@@ -1,5 +1,9 @@
 # LI.FI SDK - Node Demo
 
+We moved all SDK example into the SDK repository. Please find them there: https://github.com/lifinance/sdk?tab=readme-ov-file#examples
+
+## Old Readme
+
 The demo of [our SDK](https://github.com/lifinance/sdk) executes a simple cross chain transfer of 1 USDT from Polygon to xDai using the best bridge it can find.
 
 It needs access to an actual wallet and makes real transactions on chain.
